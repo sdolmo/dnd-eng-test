@@ -165,7 +165,6 @@ export default class ChangeQuestionType extends Component {
           )}
           triggerComponent={
             <div className="change-question">
-              New HSM Button
               <div className="icon icon--change" />
             </div>
           }

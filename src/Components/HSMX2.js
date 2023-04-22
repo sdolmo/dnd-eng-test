@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import CreateTargetEventModal from "./Modals/CreateTargetEventModal";
+import HSMX2Modal from "./Modals/HSMX2Modal";
 
-import "./SetGoalInNode.scss";
+import "./HSMX2.scss";
 
 import languages from "../views/Conversation/DDCustom/Widgets/languages.js";
 import getLanguage from "getLanguage.js";
@@ -26,37 +26,37 @@ const HSMX2 = (props) => {
     });
   }, [props.node.getGoalMeasurement().targetEvents.length]);
 
-  const deleteGoalMeasurement = () => {
-    props.node.updateGoalMeasurement({
-      campaignGoal: "",
-      targetEvents: [],
-    });
+  // const deleteGoalMeasurement = () => {
+  //   props.node.updateGoalMeasurement({
+  //     campaignGoal: "",
+  //     targetEvents: [],
+  //   });
 
-    setState({
-      ...state,
-      configured: false,
-    });
-    props.forceUpdate();
-  };
+  //   setState({
+  //     ...state,
+  //     configured: false,
+  //   });
+  //   props.forceUpdate();
+  // };
 
   const renderComponent = () => {
     let me = { id: 0, user_id: 0 };
     const { open, configured } = state;
 
     if (!open && !configured) {
-      return <div className="goal-icon"></div>;
+      return <div className="shuffle-icon"></div>;
     }
-    if (!open && configured) {
-      return <div className="gold-goal-icon"></div>;
+    if (open && !configured) {
+      return <div className="shuffle-icon-hover"></div>;
     }
     if (open) {
       if (configured) {
         return (
-          <div className="setting-goal">
+          <div className="create-hsmx2">
             <div>
               {!props.node.hsm || !props.node.hasButtonLink() ? (
                 <>
-                  <p onClick={deleteGoalMeasurement}>{language.delete}</p>
+                  <p>{language.delete}</p>
                   <p>|</p>
                 </>
               ) : null}
@@ -77,7 +77,7 @@ const HSMX2 = (props) => {
       } else {
         return (
           <div
-            className="setting-goal"
+            className="create-hsmx2"
             onClick={() => {
               events.track("click on set goal on block", {
                 company_id: me.id,
@@ -98,9 +98,10 @@ const HSMX2 = (props) => {
       }
     }
   };
+
   const renderCreateTargetModal = () => {
     return (
-      <CreateTargetEventModal
+      <HSMX2Modal
         show={state.showModal}
         closeModal={() => setState({ ...state, showModal: false })}
         configured={state.configured}
@@ -116,9 +117,15 @@ const HSMX2 = (props) => {
 
   return (
     <div
-      className="goal-selector-block"
+      className="hsmx2-block"
       onMouseEnter={() => setState({ ...state, open: true })}
       onMouseLeave={() => setState({ ...state, open: false })}
+      onClick={() => {
+        setState({
+          ...state,
+          showModal: true,
+        });
+      }}
     >
       {renderComponent()}
       {renderCreateTargetModal()}
