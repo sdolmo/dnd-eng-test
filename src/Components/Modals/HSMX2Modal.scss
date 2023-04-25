@@ -1,7 +1,7 @@
 $assetsPath: "~assets/images";
 $iconsPath: "~assets/icons";
 
-.create-target-event-modal {
+.create-hsmx2-modal {
   * {
     &::-webkit-scrollbar {
       width: 10px;
@@ -73,7 +73,7 @@ $iconsPath: "~assets/icons";
           transparent 12px
         );
       }
-      .new-goal-body {
+      .new-hsmx2-body {
         padding: 37px 34px 30px 34px;
         display: flex;
         flex-direction: column;
@@ -84,7 +84,7 @@ $iconsPath: "~assets/icons";
           border: 1px solid #c3c3ff;
           margin-bottom: 24px;
         }
-        .choice-busisness-goal-container {
+        .choice-hsmx2-template-container {
           margin-bottom: 7px;
           > p {
             &:before {
@@ -109,8 +109,8 @@ $iconsPath: "~assets/icons";
             margin: 4px 0px;
           }
         }
-        .define-goal-type-container {
-          > p {
+        .define-hsmx2-interval-container {
+          .define-variables-title {
             &:before {
               content: "2";
               padding: 5px 10px;
@@ -215,75 +215,6 @@ $iconsPath: "~assets/icons";
               .select-link {
                 margin-top: 4px;
               }
-              .campaing-expectative {
-                margin-top: 10px;
-                .icon-and-text {
-                  display: flex;
-                  align-items: center;
-                  margin-top: 10px;
-                  margin-bottom: 16px;
-                  .icon {
-                    width: 12px;
-                    height: 12px;
-                    background: #ebebeb;
-                    -webkit-mask: url(#{$iconsPath}/question-mark.svg) no-repeat
-                      center;
-                    mask: url(#{$iconsPath}/question-mark.svg) no-repeat center;
-                    margin-right: 7px;
-                  }
-                  p {
-                    line-height: 20px;
-                    color: #b2b2b2;
-                  }
-                }
-                .campaing-expectative-values {
-                  display: flex;
-                  flex-direction: column;
-                  .ant-slider {
-                    margin: 14px 0;
-                    display: flex;
-                    align-items: center;
-                    .ant-slider-rail {
-                      background: #262626;
-                      height: 3px;
-                    }
-                    .ant-slider-track {
-                      background: #9b9bff;
-                      height: 3px;
-                      border-radius: 0;
-                    }
-                    .ant-slider-handle {
-                      background: #fcfcfc;
-                      border: none;
-                      border-radius: 0;
-                      width: 6px;
-                      height: 18px;
-                      margin-top: 0;
-                      &:hover {
-                        width: 8px;
-                        height: 23px;
-                      }
-                      &:focus {
-                        box-shadow: none;
-                        width: 8px;
-                        height: 23px;
-                      }
-                    }
-                  }
-                  .expectation-value {
-                    padding: 7px 17px;
-                    width: fit-content;
-                    align-self: end;
-                    border: 1px solid #393939;
-                    border-radius: 4px;
-                    p {
-                      font-size: 15px;
-                      line-height: 20px;
-                      color: #fcfcfc;
-                    }
-                  }
-                }
-              }
             }
           }
           .add-delete-goal-container {
@@ -325,9 +256,7 @@ $iconsPath: "~assets/icons";
             }
           }
         }
-        .choice-busisness-goal-container,
-        .define-goal-type-container,
-        .campaing-expectative {
+        .choice-hsmx2-template-container {
           .select-dropdown-main {
             margin-top: 8px;
             width: 100%;
@@ -349,11 +278,10 @@ $iconsPath: "~assets/icons";
                 width: 100%;
                 height: 48px;
                 display: flex;
-                align-items: center;
                 justify-content: space-between;
                 padding: 0px 16px;
                 cursor: pointer;
-                &:not(.selected) {
+                &.selected &:not(.selected) {
                   p {
                     color: #767676;
                   }
@@ -408,6 +336,117 @@ $iconsPath: "~assets/icons";
                   }
                   .icon-and-text {
                     width: -webkit-fill-available;
+                    display: flex;
+                    align-items: center;
+                    .icon--exclamation {
+                      margin-top: -3px;
+                      width: 19px;
+                      height: 19px;
+                      background: #767676;
+                      -webkit-mask: url(#{$iconsPath}/exclamation.svg) no-repeat
+                        center;
+                      mask: url(#{$iconsPath}/exclamation.svg) no-repeat center;
+                    }
+                    p {
+                      margin-left: 10px;
+                      color: #767676;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .define-hsmx2-interval-container {
+          .hsmx2-interval-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            > p {
+              margin-bottom: 0px;
+            }
+            .time {
+              width: 50px;
+            }
+          }
+          .select-dropdown-main {
+            width: 90%;
+            &.is-active {
+              .dropdown-trigger {
+                button {
+                  border: 1px solid #6464ff;
+                  border-radius: 8px;
+                }
+              }
+            }
+            .dropdown-trigger {
+              width: 90%;
+              button {
+                background-color: #202020;
+                border: 1px solid #767676;
+                border-radius: 8px;
+                gap: 12px;
+                width: 90%;
+                height: 48px;
+                display: flex;
+                justify-content: space-between;
+                padding: 0px 16px;
+                cursor: pointer;
+                &.selected &:not(.selected) {
+                  p {
+                    color: #767676;
+                  }
+                }
+                .dropdown-arrow {
+                  width: 20px;
+                  height: 15px;
+                  background: #ffffff;
+                  -webkit-mask: url(#{$iconsPath}/dropdown-arrow.svg) no-repeat
+                    center;
+                  mask: url(#{$iconsPath}/dropdown-arrow.svg) no-repeat center;
+                }
+                .r {
+                  margin: auto 0px;
+                }
+                p {
+                  max-width: none;
+                  text-overflow: ellipsis;
+                  text-align: left;
+                  overflow: hidden;
+                  white-space: nowrap;
+                }
+              }
+            }
+            .dropdown-menu {
+              width: 80%;
+              background-color: #000000;
+              .dropdown-content {
+                background-color: #000000;
+                .dropdown-item {
+                  align-items: center;
+                  justify-content: space-between;
+                  padding-left: 16px;
+                  &:focus,
+                  &:hover {
+                    background-color: #393939;
+                  }
+                  p {
+                    overflow-x: hidden;
+                    text-overflow: ellipsis;
+                    margin: 3px -1px;
+                    padding: 1px !important;
+                    line-height: 22px;
+                  }
+                  .icon--check {
+                    margin: 0 9px;
+                    width: 19px;
+                    height: 19px;
+                    background: #ffffff;
+                    -webkit-mask: url(#{$assetsPath}/check.svg) no-repeat center;
+                    mask: url(#{$assetsPath}/check.svg) no-repeat center;
+                  }
+                  .icon-and-text {
+                    width: 80%;
                     display: flex;
                     align-items: center;
                     .icon--exclamation {

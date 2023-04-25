@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import SelectDropdown from "Components/SelectDropdown";
 import NewComponentPill from "Components/NewComponentPill";
 import SetGoalInNode from "Components/SetGoalInNode";
-import HSMX2 from "Components/HSMX2";
 
 import {
   QuestionOpenNodeModel,
@@ -150,11 +149,6 @@ export default class ChangeQuestionType extends Component {
     return (
       <div className="change-question-type-container">
         <SetGoalInNode
-          node={this.props.node}
-          forceUpdate={this.props.forceUpdate}
-          diagramEngine={this.props.diagramEngine}
-        />
-        <HSMX2
           node={this.props.node}
           forceUpdate={this.props.forceUpdate}
           diagramEngine={this.props.diagramEngine}

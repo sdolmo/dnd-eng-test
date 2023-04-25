@@ -2177,6 +2177,7 @@ export default class CreateConversation extends Component {
           }
         }}
         onClick={(e) => {
+          console.log(e);
           const keyPath = e.keyPath;
           const firstLevelKey = keyPath[keyPath.length - 1];
           const nodeOptions = basicNodes.concat(advancedNodes);

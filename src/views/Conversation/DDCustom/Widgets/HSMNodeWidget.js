@@ -8,6 +8,7 @@ import AnswerPortWidget from "./AnswerPortWidget";
 import { Droppable, Draggable, DragDropContext } from "react-beautiful-dnd";
 import { DefaultNodeModel, DefaultPortModel } from "DDCanvas/main";
 import SetGoalInNode from "Components/SetGoalInNode";
+import HSMX2Component from "Components/HSMX2Component";
 
 import events from "utils/events";
 
@@ -271,6 +272,11 @@ export class HSMNodeWidget extends React.Component {
           <SetGoalInNode
             node={node}
             forceUpdate={this.forceUpdate.bind(this)}
+          />
+          <HSMX2Component
+            node={this.props.node}
+            forceUpdate={this.props.forceUpdate}
+            diagramEngine={this.props.diagramEngine}
           />
         </div>
         <div

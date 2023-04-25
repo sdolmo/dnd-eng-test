@@ -113,7 +113,7 @@ export class DefaultLinkWidget extends React.Component {
       y: y + scrollOffsetY * offsetProportion,
     };
   }
-  
+
   drawLine() {
     const { link } = this.props;
     const { points } = link;
@@ -153,23 +153,23 @@ export class DefaultLinkWidget extends React.Component {
        L${pointRight.x - distanceOffset} ${pointRight.y}
        M${pointRight.x - distanceOffset} ${pointRight.y}
        L${pointRightXOffset} ${pointRight.y}
-       M${pointRightXOffset} ${pointRight.y} 
-       L${pointRightXOffset - arrowOffset} ${pointRight.y - arrowOffset} 
-       M${pointRightXOffset} ${pointRight.y} 
+       M${pointRightXOffset} ${pointRight.y}
+       L${pointRightXOffset - arrowOffset} ${pointRight.y - arrowOffset}
+       M${pointRightXOffset} ${pointRight.y}
        L${pointRightXOffset - arrowOffset} ${pointRight.y + arrowOffset}`;
     } else {
       let midWayX = (pointRight.x - pointLeft.x) / 2 + pointLeft.x;
       let pointRightXOffset = pointRight.x - 10;
 
       path = `M${pointLeft.x} ${pointLeft.y}
-      L${midWayX} ${ pointLeft.y}
-      M${midWayX} ${ pointLeft.y}
-      L${midWayX} ${pointRight.y} 
-      M${midWayX} ${pointRight.y} 
-      L${pointRightXOffset} ${pointRight.y} 
-      M${pointRightXOffset} ${pointRight.y} 
-      L${pointRightXOffset - arrowOffset} ${pointRight.y - arrowOffset} 
-      M${pointRightXOffset} ${pointRight.y} 
+      L${midWayX} ${pointLeft.y}
+      M${midWayX} ${pointLeft.y}
+      L${midWayX} ${pointRight.y}
+      M${midWayX} ${pointRight.y}
+      L${pointRightXOffset} ${pointRight.y}
+      M${pointRightXOffset} ${pointRight.y}
+      L${pointRightXOffset - arrowOffset} ${pointRight.y - arrowOffset}
+      M${pointRightXOffset} ${pointRight.y}
       L${pointRightXOffset - arrowOffset} ${pointRight.y + arrowOffset}`;
     }
 
