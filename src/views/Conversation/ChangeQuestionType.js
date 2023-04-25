@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import SelectDropdown from "Components/SelectDropdown";
 import NewComponentPill from "Components/NewComponentPill";
 import SetGoalInNode from "Components/SetGoalInNode";
-import HSMX2 from "Components/HSMX2";
 
 import {
   QuestionOpenNodeModel,
@@ -154,18 +153,12 @@ export default class ChangeQuestionType extends Component {
           forceUpdate={this.props.forceUpdate}
           diagramEngine={this.props.diagramEngine}
         />
-        <HSMX2
-          node={this.props.node}
-          forceUpdate={this.props.forceUpdate}
-          diagramEngine={this.props.diagramEngine}
-        />
         <SelectDropdown
           options={nodes.filter(
             (node) => !(this.props.node instanceof node.model)
           )}
           triggerComponent={
             <div className="change-question">
-              New HSM Button
               <div className="icon icon--change" />
             </div>
           }

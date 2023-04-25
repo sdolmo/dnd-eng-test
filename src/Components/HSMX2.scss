@@ -2,25 +2,34 @@ $iconsPath: "~assets/icons";
 $imagesPath: "~assets/images";
 
 .change-question-type-container {
-  .goal-selector-block {
+  .hsmx2-block {
     cursor: pointer;
     display: flex;
+    align-items: center;
     margin-bottom: 8px;
-    .goal-icon,
-    .gold-goal-icon {
+    color: white;
+    background-color: #6f737d;
+    border-radius: 2px;
+    padding: 3px 6px;
+    gap: 4px;
+    &::before {
+      content: "HSM ";
+    }
+    .shuffle-icon,
+    .shuffle-icon-hover {
       background: no-repeat;
       background-position-y: center;
-      width: 28px;
-      height: 28px;
-      background-size: 28px;
+      width: 20px;
+      height: 20px;
+      background-size: 22px;
     }
-    .goal-icon {
-      background-image: url(#{$iconsPath}/grey-start-icon.svg);
+    .shuffle-icon {
+      background-image: url(#{$iconsPath}/shuffle.svg);
     }
-    .gold-goal-icon {
-      background-image: url(#{$iconsPath}/gold-goal-icon.png);
+    .shuffle-icon-hover {
+      background-image: url(#{$iconsPath}/shuffle-hover.svg);
     }
-    .setting-goal {
+    .create-hsmx2 {
       background: rgba(87, 39, 176, 0.3);
       height: 28px;
       border-radius: 5px;
